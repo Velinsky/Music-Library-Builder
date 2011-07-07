@@ -1,0 +1,7 @@
+Osobní projekt pro správu mp3
+
+vezme 100 "náhodných" (je to podle pořadí filesystému) hudebních souborů z dané složky procházené rekurzivně
+
+tyto soubory přesune do složky, které se říká kvantum (jen pokud je kvantum prázdné)
+
+poté, co jsem spokojen se stavem souborů ve kvantu (otagovány, ohodnoceny, správné filenames, žádný shity), mohu je přesunou - zatím ručně - do outboxu
