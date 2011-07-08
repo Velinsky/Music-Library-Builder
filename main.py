@@ -21,12 +21,12 @@ ensure_dirs = [MUSIC_OUTBOX_DIR, MUSIC_QUANTUM_DIR]
 for single_dir in ensure_dirs:
     if not os.path.exists(single_dir):
         ensure_dir(single_dir)
-        print style().info() + 'slozka ' + single_dir + ' neexistuje, vytvarim' + style().normal()
+        print style().info() + 'folder ' + single_dir + ' does not exists, creating' + style().normal()
 
 # check whether any files are in quantum dir
 if not os.listdir(MUSIC_QUANTUM_DIR):
     print
-    print style().h2() + 'QUANTUM je prazdne, naplnim ho tudiz soubory' + style().normal()
+    print style().h2() + 'QUANTUM is empty, filling it with files' + style().normal()
 
     # list all files in inbox
     quantum_files = []
@@ -37,16 +37,16 @@ if not os.listdir(MUSIC_QUANTUM_DIR):
 
     # take quantum from inbox
     quantum_files = quantum_files[:QUANTUM_SIZE]
-    print 'Beru z inboxu ' + str(len(quantum_files)) + ' souboru'
+    print 'Taking ' + str(len(quantum_files)) + ' files from inbox'
 
     for quantum_file in quantum_files:
         os.rename(quantum_file, MUSIC_QUANTUM_DIR + "\\" + os.path.basename(quantum_file))
         sys.stdout.write('.')
 
     print style().normal()
-    print style().normal() + 'Soubory presunuty z inboxu do kvanta'
+    print style().normal() + 'Files moved from inbox to quantum'
 else:
-    print style().normal() + 'V kvantu jsou soubory (' + str(len(os.listdir(MUSIC_QUANTUM_DIR))) + '), nedelam tudiz nic'
+    print style().normal() + 'There are files on quantum (' + str(len(os.listdir(MUSIC_QUANTUM_DIR))) + '), thus doing nothing'
 
 
 
