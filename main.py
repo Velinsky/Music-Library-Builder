@@ -1,13 +1,11 @@
 from os import *
 from functions import *
+from config import *
 
 import re
 import sys
 
-# constants definitions
-MUSIC_INBOX_DIR = 'F:\Music\inbox'
-MUSIC_QUANTUM_DIR = 'C:\Projects\Music Quantum'
-MUSIC_OUTBOX_DIR = 'F:\Music\outbox'
+
 
 # number of songs to move to quantum folder, if it is empty
 QUANTUM_SIZE = 100
